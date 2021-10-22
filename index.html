@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>coffeerun</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+  <style>
+    form :focus:required:invalid {
+      border-color: #bf3f3d;
+    }
+  </style>
+</head>
+
+<body class="container">
+  <header>
+    <h1>CoffeeRun</h1>
+  </header>
+  <section>
+    <div class="panel panel-primary">
+      <div class="panel body">
+        <form data-coffee-order="form">
+          <div class="form-group">
+            <label for="coffeeOrder">Coffee Order</label>
+            <input class="form-control" name="coffee" id="coffeeOrder" autofocus required pattern=[a-zA-Z\s]+>
+          </div> <!-- form-group -->
+          <div class="form-group">
+            <label for="emailInput">Email </label>
+            <input class="form-control" type="email" name="emailAddress" id="emailInput" required
+              placeholder="picard@starfleet.com">
+          </div> <!-- form-group -->
+          ​
+          <div class="radio"><label><input type="radio" name="size" value="short">Short</label></div>
+          <div class="radio"><label><input type="radio" name="size" value="tall" checked>Tall</label></div>
+          <div class="radio"><label><input type="radio" name="size" value="grande">Grande</label></div>
+          <div class="radio"><label><input type="radio" name="size" value="venti">Venti</label></div>
+
+          <div class="form-group">
+            <label for="flavorShot">Flavor Shot</label>
+            <select id="flavorShot" class="form-control" name="flavor">
+              <option value="">None</option>
+              <option value="caramel">Caramel</option>
+              <option value="almond">Almond</option>
+              <option value="mocha" selected>Mocha</option>
+              <option value="pumpkin">Pumpkin </option>
+            </select>
+          </div>
+          ​
+          <div class="form-group">
+            <label for="strengthLevel">Caffeine Rating</label>
+            <input name="strength" id="strengthLevel" type="range" min="1" max="100" value="70">
+          </div>
+          ​
+          <button type="submit" class="btn btn-outline-primary">Submit</button>
+          <button type="reset" class="btn btn-outline-primary">Reset</button>
+          ​
+        </form>
+      </div> <!-- panel body -->
+    </div> <!-- panel panel-primary -->
+    ​
+    <div class="panel panel-primary">
+      <div class="panel-body">
+        <h4>Pending Orders:</h4>
+        <div data-coffee-order="checklist">
+        </div>
+      </div>
+    </div>
+    ​
+  </section>
+  ​
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  ​
+  <script src="scripts/validation.js" charset="utf-8"></script>
+  <script src="scripts/checklist.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+  <script src="scripts/firebaseconfig.js" charset="utf-8"></script>
+  <script src="scripts/firebasedatastore.js" charset="utf-8"></script>
+  <script src="scripts/datastore.js" charset="utf-8"></script>
+  <script src="scripts/truck.js" charset="utf-8"></script>
+  <script src="scripts/main.js" charset="utf-8"></script>
+</body>
+</body>
+
+</html>
